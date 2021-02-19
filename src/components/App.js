@@ -5,41 +5,41 @@ const App=()=>{
     const [renderBall,setRenderBall]=useState(false);
     // const [posi,setPosi]=useState(0);
     const [ballPosition,setballPosition]=useState({ left:0, top:0 });
-   
-    useEffect(()=>{
-        function keyD(event){
-            switch(event.keyCode){
-                case 39:{  //right
-                    setballPosition({
-                        left:ballPosition.left+5,
-                        top:ballPosition.top,
-                    });
-                    break;
-                }
-                // case 40:{ //up
-                //     setballPosition({
-                //         left:ballPosition.left,
-                //         top:ballPosition.top+5,
-                //     });
-                //     break;
-                // }
-                // case 37:{   //left
-                //     setballPosition({
-                //         left:ballPosition.left-5,
-                //         top:ballPosition.top,
-                //     });
-                //     break;
-                // }
-                // case 38:{   //down
-                //     setballPosition({
-                //         left:ballPosition.left,
-                //         top:ballPosition.top-5,
-                //     });
-                //     break;
-                // }
-                default: break;
+    function keyD(event){
+        switch(event.keyCode){
+            case 39:{  //right
+                setballPosition({
+                    left:ballPosition.left+5,
+                    top:ballPosition.top,
+                });
+                break;
             }
+            // case 40:{ //up
+            //     setballPosition({
+            //         left:ballPosition.left,
+            //         top:ballPosition.top+5,
+            //     });
+            //     break;
+            // }
+            // case 37:{   //left
+            //     setballPosition({
+            //         left:ballPosition.left-5,
+            //         top:ballPosition.top,
+            //     });
+            //     break;
+            // }
+            // case 38:{   //down
+            //     setballPosition({
+            //         left:ballPosition.left,
+            //         top:ballPosition.top-5,
+            //     });
+            //     break;
+            // }
+            default: break;
         }
+    }
+    useEffect(()=>{
+        
         document.addEventListener("keydown",keyD);
         return ()=>document.removeEventListener("keydown",keyD);
 
